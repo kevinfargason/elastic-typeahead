@@ -1,27 +1,10 @@
-var app = angular.module('plunker', ['siyfion.sfTypeahead']);
+var app = angular.module('demo', ['siyfion.sfTypeahead']);
 _.mixin(s.exports());
 
 app.controller('MainCtrl', function($scope, $http) {
   
   $scope.selectedNumber = null;
 
-  // console.log($scope);
-
-  // $http.post('http://elasticsearch.wm-cloud.com:9200/wmcust/_suggest', 
-  //   {
-  //              "custdetails": {     "text": 'kevin',     "completion": {       "field": "Cust_Suggest"     }   } 
-  //         }
-  //   ).
-  // success(function(data, status, headers, config) {
-  //   // this callback will be called asynchronously
-  //   // when the response is available
-  //   $scope.selectedNumber = data.customerDetails;
-  //   console.log(data,status,headers,config);
-  // }).
-  // error(function(data, status, headers, config) {
-  //   // called asynchronously if an error occurs
-  //   // or server returns response with an error status.
-  // });
   
   // instantiate the bloodhound suggestion engine
   var numbers = new Bloodhound({
@@ -83,7 +66,6 @@ app.controller('MainCtrl', function($scope, $http) {
     // var suggestion = suggestions[1][0].options[0].text;
     // resultsArr.push({num: _.titleize(suggestion)});
   }catch(e){console.log(e);}
-    window.poop = resultsArr;
     return resultsArr;
   };
   
@@ -97,19 +79,19 @@ app.controller('MainCtrl', function($scope, $http) {
     }
   };
   
-  $scope.addValue = function () {
-    numbers.add({
-      num: 'twenty'
-    });
-  };
+  // $scope.addValue = function () {
+  //   numbers.add({
+  //     num: 'twenty'
+  //   });
+  // };
   
-  $scope.setValue = function () {
-    $scope.selectedNumber = { num: 'seven' };
-  };
+  // $scope.setValue = function () {
+  //   $scope.selectedNumber = { num: 'seven' };
+  // };
   
-  $scope.clearValue = function () {
-    $scope.selectedNumber = null;
-  };
+  // $scope.clearValue = function () {
+  //   $scope.selectedNumber = null;
+  // };
 
   
   // Typeahead options object
@@ -117,9 +99,9 @@ app.controller('MainCtrl', function($scope, $http) {
     highlight: true
   };
   
-  $scope.exampleOptionsNonEditable = {
-    highlight: true,
-    editable: false // the new feature
-  };
+  // $scope.exampleOptionsNonEditable = {
+  //   highlight: true,
+  //   editable: false // the new feature
+  // };
   
 });
