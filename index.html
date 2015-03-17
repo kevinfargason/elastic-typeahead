@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <link rel="stylesheet" href="style.css">
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script data-require="angular.js@1.2.x" src="http://code.angularjs.org/1.2.11/angular.js" data-semver="1.2.11"></script>
+    <script data-require="typeahead.js@*" data-semver="0.10.0" src="http://twitter.github.com/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+    <script data-require="bloodhound.js@*" data-semver="0.10.0" src="http://twitter.github.com/typeahead.js/releases/latest/bloodhound.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.string/3.0.3/underscore.string.min.js"></script>
+
+    <script src="angular-typeahead.js"></script>
+    <script src="app.js"></script>
+
+  </head>
+
+  <body ng-controller="MainCtrl">
+    <p>Model: {{selectedNumber|json}}</p>
+    <input class='typeahead' id= "masterSearch" type="text" sf-typeahead options="exampleOptions" datasets="numbersDataset" ng-model="selectedNumber">
+
+  </body>
+
+</html>
